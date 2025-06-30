@@ -1,11 +1,14 @@
-import { useState } from 'react'
-import './App.css'
+// import { useState } from 'react'
+import './App.css';
+import Home from './pages/Home';
+import { GlobalStyles } from './styles/GlobalStyles';
 
 function App() {
 
   return (
     <>
-      <div>LAB 201</div>
+      <GlobalStyles/>
+      <Home/>
     </>
   )
 }
