@@ -114,6 +114,7 @@ export const FooterContainer = styled.footer`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  border: 1px black solid;
   font-family: 'League Spartan', sans-serif;
 
   @media (max-width: 768px) {

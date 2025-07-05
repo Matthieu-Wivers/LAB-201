@@ -1,34 +1,34 @@
 import React from 'react';
-import { ContactSection, 
-  LeftContent, 
-  RightForm, 
-  Form, 
-  Input, 
-  Textarea, 
-  Button } from '../styles/ContactStyles';
-const Contact = () => {
-    return (
-          <ContactSection>
-                  <LeftContent>
-                    <p>Une question ? Une envie de parler musique ?
-                      Envoyez-nous un petit mot ou écrivez à notre équipe.
-                      </p>
-                    <p>Pour toute demande presse, collaboration ou partenariat, 
-                      contactez-nous ici :contact@wolfalice.com
-                      </p>
-                  </LeftContent>
+import {
+  ContactSection,
+  LeftContent,
+  RightForm,
+  Form,
+  Input,
+  Textarea,
+  Button,
+} from '../styles/ContactStyles';
 
-                  <RightForm>
-                    <Form>
-                      <Input type="text" placeholder="Nom" required />
-                      <Input type="email" placeholder="Email" required />
-                      <Textarea placeholder="Message" rows="5" required />
-                      <Button type="submit">Envoyer</Button>
-                    </Form>
-                  </RightForm>
-                </ContactSection>
+export default function Contact() {
+  return (
+    <ContactSection>
+      <LeftContent>
+        <p>Une question ? 
+          Une envie de parler musique ?
+          Envoyez-nous un petit mot ou écrivez à notre équipe.</p>
+        <p>Pour toute demande presse, 
+          collaboration ou partenariat, 
+          contactez-nous ici :contact@wolfalice.com</p>
+      </LeftContent>
 
-    );
-};
-
-export default Contact;
+      <RightForm>
+        <Form>
+          <Input type="text" placeholder="Nom" required />
+          <Input type="email" placeholder="Email" required />
+          <Textarea placeholder="Message" rows="5" required />
+          <Button type="submit">Envoyer</Button>
+        </Form>
+      </RightForm>
+    </ContactSection>
+  );
+}

@@ -51,7 +51,7 @@ const Home = () => {
                     <p><i>Lorem ipsum dolor sit amet consectetur...</i></p>
                 </Section>
                 
-                <Contact/>
+                <Contact iid="Contact"/>
             </main>
             <Footer/>
         </>
