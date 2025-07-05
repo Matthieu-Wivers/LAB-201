@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { NavBar, NavLink, Burger, MobileMenu, Section } from '../styles/GlobalStyles';
 import Footer from './Footer';
 import logo from '../assets/logo.png'
+import Contact from './Contact';
 
 const Home = () => {
     const [isOpen, setIsOpen]= useState(false);
@@ -38,11 +39,7 @@ const Home = () => {
                     <p>Lorem ipsum dolor sit amet consectetur...</p>
                 </Section>
 
-                <Section id="Contact">
-                    <p>Lorem ipsum dolor sit amet consectetur...</p>
-                    <p>Lorem ipsum dolor sit amet consectetur...</p>
-                    <p>Lorem ipsum dolor sit amet consectetur...</p>
-                </Section>
+                
 
                 <Section id="Groupe" >
                     <p>Lorem ipsum dolor sit amet consectetur...</p>
@@ -53,6 +50,8 @@ const Home = () => {
                 <Section id="Tournee" >
                     <p><i>Lorem ipsum dolor sit amet consectetur...</i></p>
                 </Section>
+                
+                <Contact/>
             </main>
             <Footer/>
         </>
