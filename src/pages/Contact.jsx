@@ -1,5 +1,11 @@
 import React from 'react';
-
+import { ContactSection, 
+  LeftContent, 
+  RightForm, 
+  Form, 
+  Input, 
+  Textarea, 
+  Button } from '../styles/ContactStyles';
 const Contact = () => {
     return (
           <ContactSection>
