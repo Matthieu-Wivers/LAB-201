@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useRef} from 'react';
+import emailjs from 'emailjs-com';
 import {
   ContactSection,
   BackgroundContact,
@@ -18,6 +19,27 @@ import {FaInstagram, FaTiktok, FaYoutube, FaSpotify} from 'react-icons/fa';
 
 
 export default function Contact() {
+
+  const FormRef = useRef();
+
+  const sendEmail =(e) =>{
+    e.preventDefault();
+
+    emailjs.sendForm(
+      'service_jvhwhzk',
+      'template_m2rcarn',
+      FormRef.current,
+      '2C7HlqYTqaCCmyFjJ'
+    ).then(
+      (result) =>{
+        alert("Message envoyé !");
+        FormRef.current.reset();
+      },
+      (error)=>{
+        alert("Erreur : " + error.text);
+      }
+    );
+  };
   return (
     <ContactSection>
       <BackgroundContact>
@@ -35,12 +57,12 @@ export default function Contact() {
       </LeftContent>
 
       <RightForm>
-        <Form>
+        <Form ref={FormRef} onSubmit={sendEmail}>
           <Row>
-          <Input type="text" placeholder="Nom" required />
-          <Input type="email" placeholder="Email" required />
+          <Input type="text" name='user_name' placeholder="Nom" required />
+          <Input type="email" name='user_name' placeholder="Email" required />
           </Row>
-          <Textarea placeholder="Message" rows="5" required />
+          <Textarea name = "message"placeholder="Message" rows="5" required />
           <Button type="submit">Envoyer</Button>
         </Form>
       </RightForm>
