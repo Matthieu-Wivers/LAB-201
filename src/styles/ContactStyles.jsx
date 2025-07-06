@@ -2,19 +2,51 @@ import styled from 'styled-components';
 
 // Container principal
 export const ContactSection = styled.section`
- h2{
-    text-align: center;
-    color: #E5B85A;
- }
+
 
 `;
+// background image styles
 
+
+export const BackgroundContact = styled.div`
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 2rem;
+  z-index: 0;
+
+  h2 {
+    text-align: center;
+    color: #E5B85A;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+  }
+  /* Pseudo-élément pour le fond flouté */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('/public/images/image.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(6px);
+    transform: scale(1.1); 
+    z-index: 0;
+  }
+
+  /* Contenu au-dessus du flou */
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+
+`;
+  /* paragraphe et form*/
 export const ContactForm =styled.div`
   display: flex;
   justify-content: space-between;
   gap: 4rem;
   padding: 3rem 2rem;
-  background-color: #f9f9f9;
     @media (max-width: 768px) {
     flex-direction: column;
     gap: 2rem;
@@ -25,7 +57,7 @@ export const LeftContent = styled.div`
   flex: 1;
   font-family: 'League Spartan', sans-serif;
   font-size: 1.3rem;
-  color: #2f0101;
+  color: #fff;
   width: 50%;
   p {
     margin-bottom: 1.5rem;       /* plus d'espace entre les paragraphes */
@@ -84,6 +116,44 @@ background: linear-gradient(to right, #E5B85A, #F3E4B2, #E5B85A, #F3E4B2);
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s;
-
- 
 `;
+
+  /* Texte et réseaux*/
+export const UnderContact = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;     // centre horizontalement
+  justify-content: center;
+  background-color: #160000;
+  gap: 1rem;
+  /* margin-top: 2rem; */
+  padding: 20px;
+`;
+
+export const Text = styled.div`
+  text-align: center;
+  font-size: 2rem;
+  color: #F3E4B2;
+  margin-top: 2rem;
+
+`;
+
+export const Socials = styled.div`
+  display: flex;
+  gap: 1.2rem;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+
+
+  a {
+    color: #f3c01a;
+
+    &:hover {
+      color: #65000B;
+    }
+  }
+`;
+
+
+

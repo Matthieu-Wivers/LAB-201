@@ -182,6 +182,10 @@ export const FooterLink = styled.a`
 export const Socials = styled.div`
   display: flex;
   gap: 1.5rem;
+  font-size: 2.5rem;
+  a{
+    color: #f3c01a;
+  }
 
   @media (max-width: 768px) {
     order: 1;

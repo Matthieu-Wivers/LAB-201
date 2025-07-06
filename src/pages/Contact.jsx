@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   ContactSection,
+  BackgroundContact,
   ContactForm,
   LeftContent,
   RightForm,
@@ -9,11 +10,17 @@ import {
   Input,
   Textarea,
   Button,
+  UnderContact,
+  Text,
+  Socials,
 } from '../styles/ContactStyles';
+import {FaInstagram, FaTiktok, FaYoutube, FaSpotify} from 'react-icons/fa';
+
 
 export default function Contact() {
   return (
     <ContactSection>
+      <BackgroundContact>
       <h2>
         Restons en Contact!
       </h2>
@@ -38,6 +45,18 @@ export default function Contact() {
         </Form>
       </RightForm>
       </ContactForm>
+</BackgroundContact>
+      <UnderContact>
+        <Text>
+          Et suivez-nous sur les réseaux pour toutes les actus 🎸
+        </Text>
+      <Socials>
+                 <a href="#"><FaInstagram /></a>
+                <a href="#"><FaTiktok /></a>
+                <a href="#"><FaYoutube /></a>
+                <a href="#"><FaSpotify /></a>
+       </Socials>
+       </UnderContact>
     </ContactSection>
   );
 }
