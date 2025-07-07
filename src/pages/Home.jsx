@@ -1,11 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
 import { NavBar, NavLink, Burger, MobileMenu, Section } from '../styles/GlobalStyles';
-import Footer from './Footer';
 import logo from '../assets/logo.png'
-import Contact from './Contact';
+import Contact from '../components/Contact';
 import AlbumCarousel from '../components/AlbumsCarousel';
 import ToursDates from '../components/ToursDates';
+import Footer from '../components/Footer';
+
 
 const Home = () => {
     const [isOpen, setIsOpen]= useState(false);

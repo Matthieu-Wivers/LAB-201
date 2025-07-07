@@ -4,10 +4,13 @@ import styled, { createGlobalStyle } from 'styled-components';
 export const GlobalStyles = createGlobalStyle`
   * {
     margin: 0; padding: 0; box-sizing: border-box;
+  /* background: #2F0101; */
+    
   }
   html {
     scroll-behavior: smooth;
   }
+
 `;
 // La navigation
 export const NavBar = styled.header`

@@ -64,7 +64,12 @@ export const LeftContent = styled.div`
     padding: 10px 40px;
     text-align: left;
     line-height: 1.2;
-  }`;
+  }
+    @media (max-width: 768px) {
+    order:1;
+    width:100%;
+  }
+  `;
 
 export const RightForm = styled.div`
   flex: 1;

@@ -19,7 +19,7 @@ import {FaInstagram, FaTiktok, FaYoutube, FaSpotify} from 'react-icons/fa';
 import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function Contact() {
+export default function Contact({id}) {
 
   const FormRef = useRef();
 
@@ -42,7 +42,7 @@ export default function Contact() {
     );
   };
   return (
-    <ContactSection>
+    <ContactSection id={id}>
       <BackgroundContact>
       <h2>
         Restons en Contact!
