@@ -5,6 +5,7 @@ import Footer from './Footer';
 import logo from '../assets/logo.png'
 import Contact from './Contact';
 import AlbumCarousel from '../components/AlbumsCarousel';
+import ToursDates from '../components/ToursDates';
 
 const Home = () => {
     const [isOpen, setIsOpen]= useState(false);
@@ -41,6 +42,7 @@ const Home = () => {
                 </Section>
 
                 <AlbumCarousel />
+                <ToursDates />
                 
 
                 
