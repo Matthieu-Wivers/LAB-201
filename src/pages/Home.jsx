@@ -4,6 +4,7 @@ import { NavBar, NavLink, Burger, MobileMenu, Section } from '../styles/GlobalSt
 import Footer from './Footer';
 import logo from '../assets/logo.png'
 import Contact from './Contact';
+import AlbumCarousel from '../components/AlbumsCarousel';
 
 const Home = () => {
     const [isOpen, setIsOpen]= useState(false);
@@ -38,6 +39,9 @@ const Home = () => {
                     <p>Lorem ipsum dolor sit amet consectetur...</p>
                     <p>Lorem ipsum dolor sit amet consectetur...</p>
                 </Section>
+
+                <AlbumCarousel />
+                
 
                 
 

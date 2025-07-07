@@ -1,0 +1,11 @@
+{
+  "hosting": [
+    {
+      "target": "lab201-theclearing",
+      "public": "dist",
+      "rewrites": [
+        { "source": "**", "destination": "/index.html" }
+      ]
+    }
+  ]
+}
