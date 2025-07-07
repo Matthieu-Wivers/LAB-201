@@ -16,7 +16,8 @@ import {
   Socials,
 } from '../styles/ContactStyles';
 import {FaInstagram, FaTiktok, FaYoutube, FaSpotify} from 'react-icons/fa';
-
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Contact() {
 
@@ -31,8 +32,8 @@ export default function Contact() {
       FormRef.current,
       '2C7HlqYTqaCCmyFjJ'
     ).then(
-      (result) =>{
-        alert("Message envoyé !");
+      () =>{
+        toast.success("✅ Message envoyé !");
         FormRef.current.reset();
       },
       (error)=>{
@@ -79,6 +80,7 @@ export default function Contact() {
                 <a href="#"><FaSpotify /></a>
        </Socials>
        </UnderContact>
+       <ToastContainer position='bottom-right' autoClose={3000} hideProgressBar/>
     </ContactSection>
   );
 }
