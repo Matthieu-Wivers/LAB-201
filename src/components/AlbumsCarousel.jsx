@@ -8,7 +8,7 @@ const albums = [
   { id: 5, title: "Spotify Sessions", img: "./Images/SpotifySessionsCover.jpg", spotifyUrl: "https://open.spotify.com/album/0rpYUAMj7cXOOuNLlKJ1MR?si=-j7OfxLQQtG3GiSAcMWlSw" },
 ];
 
-export default function AlbumCarousel() {
+export default function AlbumCarousel({id}) {
     const [startIndex, setStartIndex] = useState(0);
     const visibleCount = 5;
 
@@ -21,7 +21,7 @@ export default function AlbumCarousel() {
     };
 
     return (
-        <div style={{ backgroundColor: "#330a0a", color: "#f0d37f", padding: "1rem", maxWidth: 900, margin: "auto" }}>
+        <div id={id} style={{ backgroundColor: "#330a0a", color: "#f0d37f", padding: "1rem", maxWidth: 900, margin: "auto" }}>
         <h2 style={{ textAlign: "center", marginBottom: "1rem" }}>(Re)découvrez les premiers albums</h2>
         
         <div style={{ display: "flex", alignItems: "center" }}>

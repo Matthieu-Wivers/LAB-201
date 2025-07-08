@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ref, onValue } from "firebase/database";
 import { database } from "../firebase"; // Ajuste le chemin si besoin
 
-const ToursDates = () => {
+const ToursDates = ({id}) => {
   const [tours, setTours] = useState([]);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const ToursDates = () => {
   }, []);
 
   return (
-    <div>
+    <div id={id}>
       <div
         style={{
           flex: 1,

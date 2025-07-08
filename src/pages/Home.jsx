@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { NavBar, NavLink, Burger, MobileMenu, Section } from '../styles/GlobalStyles';
 import logo from '../assets/logo.png'
+import Accueil from '../components/Accueil';
 import Contact from '../components/Contact';
 import AlbumCarousel from '../components/AlbumsCarousel';
 import ToursDates from '../components/ToursDates';
@@ -36,27 +37,17 @@ const Home = () => {
             </NavBar>
 
             <main>
-                <Section id="Home" >
-                    <p>Lorem ipsum dolor sit amet consectetur...</p>
-                    <p>Lorem ipsum dolor sit amet consectetur...</p>
-                    <p>Lorem ipsum dolor sit amet consectetur...</p>
-                </Section>
+                <Accueil id="Home" />
+                <ToursDates id="Tournee" />
 
-                <AlbumCarousel />
-                <ToursDates />
+                <AlbumCarousel id="Groupe" />
                 
 
                 
 
-                <Section id="Groupe" >
-                    <p>Lorem ipsum dolor sit amet consectetur...</p>
-                    <p>Lorem ipsum dolor sit amet consectetur...</p>
-                    <p>Lorem ipsum dolor sit amet consectetur...</p>
-                </Section>
+                
 
-                <Section id="Tournee" >
-                    <p><i>Lorem ipsum dolor sit amet consectetur...</i></p>
-                </Section>
+               
                 
                 <Contact id="Contact"/>
             </main>

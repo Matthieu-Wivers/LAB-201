@@ -6,8 +6,6 @@ export const ContactSection = styled.section`
 
 `;
 // background image styles
-
-
 export const BackgroundContact = styled.div`
   position: relative;
   overflow: hidden;
@@ -29,6 +27,7 @@ export const BackgroundContact = styled.div`
     background-image: url('/public/images/image.png');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     filter: blur(6px);
     transform: scale(1.1); 
     z-index: 0;
@@ -68,6 +67,10 @@ export const LeftContent = styled.div`
     @media (max-width: 768px) {
     order:1;
     width:100%;
+    p{
+    padding: 0;
+
+    }
   }
   `;
 
@@ -121,6 +124,7 @@ background: linear-gradient(to right, #E5B85A, #F3E4B2, #E5B85A, #F3E4B2);
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s;
+ 
 `;
 
   /* Texte et réseaux*/
