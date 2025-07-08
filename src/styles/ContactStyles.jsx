@@ -24,7 +24,7 @@ export const BackgroundContact = styled.div`
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url('/public/images/contact.jpg');
+    background-image: url('/Images/contact.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

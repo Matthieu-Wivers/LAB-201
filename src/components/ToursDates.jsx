@@ -164,7 +164,6 @@ const Presentation = styled.section`
 const ImageContainer = styled.div`
   flex: 1 1 300px;
   width: 100%;
-  border: 2px solid #fff;
 `;
 
 const VinylImage = styled.img`
