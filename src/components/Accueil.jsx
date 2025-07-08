@@ -1,7 +1,8 @@
 // HeroSection.js (ou Accueil.js)
 import React from 'react';
 import styled from 'styled-components';
-import logo from '../assets/logo.png'
+// import logos from '../public/Images/logos.png';
+import logos from '../assets/logos.png'
 
 
 
@@ -10,8 +11,9 @@ const Accueil = ({id}) => {
   return (
     <Container id={id}>
       <ImageWrapper>
+        <Logo src={logos} alt="logo" />
       </ImageWrapper>
-        <Logo src={logo} alt="logo" />
+        {/* <Logo src={logos} alt="logo" /> */}
 
       <Text>Disponible dès le 29 Août</Text>
           <Section>
@@ -47,19 +49,21 @@ const Container = styled.div`
 
 const ImageWrapper = styled.div`
   position: relative;
- background-image: url('/public/images/image.png');
+  background-image: url('/public/images/Accueil.jpg');
   background-size: cover;
-  background-position: center;
-  height: 80vh;
+  background-position: center center;
+  background-repeat: no-repeat;
   width: 100%;
+  height: 100vh;
 `;
+
 
 const Logo = styled.img`
   position: absolute;
-  bottom: 40px;
+  bottom: -5vh; /* tout en bas du parent */
   left: 50%;
   transform: translateX(-50%);
-  height: 60px;
+  height: 90px;
 `;
 
 const Text = styled.p`

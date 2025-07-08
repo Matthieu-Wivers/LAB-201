@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { NavBar, NavLink, Burger, MobileMenu, Section } from '../styles/GlobalStyles';
-import logo from '../assets/logo.png'
+import goldLogo from '../assets/goldLogo.png'
 import Accueil from '../components/Accueil';
 import Contact from '../components/Contact';
 import AlbumCarousel from '../components/AlbumsCarousel';
@@ -14,7 +14,7 @@ const Home = () => {
     return (
         <>
             <NavBar>
-                <img src={logo} alt="Logo du groupe" />
+                <img src={goldLogo} alt="Logo du groupe" />
                  {/* Bouton burger visible en mobile */}
       <Burger onClick={() => setIsOpen(!isOpen)}>
         ☰

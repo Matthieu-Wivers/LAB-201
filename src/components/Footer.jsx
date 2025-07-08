@@ -10,7 +10,7 @@ FooterContainer,
   FooterLink
 } from '../styles/GlobalStyles';
 import {FaInstagram, FaTiktok, FaYoutube, FaSpotify} from 'react-icons/fa';
-import logo from '../assets/logo.png'; 
+import goldLogo from '../assets/goldLogo.png'; 
 
 
 
@@ -18,7 +18,7 @@ const Footer = () => (
     <FooterContainer>
       {/* Ligne 1 : logo + navigation */}
       <FooterRow>
-        <Logo src={logo} alt="Logo du groupe" />
+        <Logo src={goldLogo} alt="Logo du groupe" />
         <NavLinksFooter>
           <FooterLink href="#Home">Accueil</FooterLink>
           <FooterLink href="#Tournee">Tournée</FooterLink>
