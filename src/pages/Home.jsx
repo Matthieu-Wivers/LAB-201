@@ -36,7 +36,7 @@ const Home = () => {
       )}
             </NavBar>
 
-            <main>
+            <main style={{background:"#160000"}}>
                 <Accueil id="Home" />
                 <ToursDates id="Tournee" />
 

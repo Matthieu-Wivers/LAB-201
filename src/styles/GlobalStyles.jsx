@@ -90,7 +90,6 @@ export const MobileMenu = styled.div`
   }
 `;
 
-
 // Les sections 
 export const Section = styled.section`
   padding: 100px 2rem 2rem;

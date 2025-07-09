@@ -132,11 +132,10 @@ export const UnderContact = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;     // centre horizontalement
+  align-items: center; 
   justify-content: center;
   background-color: #160000;
   gap: 1rem;
-  /* margin-top: 2rem; */
   padding: 20px;
 `;
 

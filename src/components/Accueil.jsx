@@ -13,8 +13,6 @@ const Accueil = ({id}) => {
       <ImageWrapper>
         <Logo src={logos} alt="logo" />
       </ImageWrapper>
-        {/* <Logo src={logos} alt="logo" /> */}
-
       <Text>Disponible dès le 29 Août</Text>
           <Section>
       <LeftContent>
@@ -49,7 +47,7 @@ const Container = styled.div`
 
 const ImageWrapper = styled.div`
   position: relative;
-  background-image: url('/public/images/Accueil.jpg');
+  background-image: url('/Images/Accueil.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

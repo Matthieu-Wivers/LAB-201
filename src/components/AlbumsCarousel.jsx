@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Groupe from "./Groupe";
 const albums = [
   { id: 1, title: "My Love Is Cool", img: "./Images/MyLoveIsCoolCover.jpg", spotifyUrl: "https://open.spotify.com/intl-fr/album/2L82g2rqAlNBcADFzayJBU?si=zxgSVs8cTxywbvTDWYZErA" },
   { id: 2, title: "Vision OF A Life", img: "./Images/VisionOfALifeCover.jpg", spotifyUrl: "https://open.spotify.com/intl-fr/album/7Mn6FjNopuROYZLIN91hhe?si=8wLeDYH-RUSycmuMDA7WVw" },
@@ -21,6 +21,8 @@ export default function AlbumCarousel({id}) {
     };
 
     return (
+        <>
+        <Groupe/>
         <div id={id} style={{ backgroundColor: "#330a0a", color: "#f0d37f", padding: "1rem", maxWidth: 900, margin: "auto" }}>
         <h2 style={{ textAlign: "center", marginBottom: "1rem" }}>(Re)découvrez les premiers albums</h2>
         
@@ -63,6 +65,7 @@ export default function AlbumCarousel({id}) {
             <button onClick={next} disabled={startIndex >= albums.length - visibleCount} style={navButtonStyle}>{">"}</button>
         </div>
         </div>
+        </>
     );
 }
 
