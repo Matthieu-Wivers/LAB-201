@@ -52,7 +52,7 @@ const BarContainer = styled.div`
 const LongBar = styled.div`
   width: 80%;
   height: 4px;
-  background-color: #F3E4B2;
+  background-color: #E5B85A;
   margin: 20px 0;
   border-radius: 2px;
 `;

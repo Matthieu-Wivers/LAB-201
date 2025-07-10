@@ -298,71 +298,68 @@ const IntroText = styled.div`
 `;
 
 // caroussel 
-const Title = styled.h2`
-  text-align: center;
-  margin: 4rem 0;
-`;
+const Title = styled.h2` 
+text-align: center; 
+margin: 4rem 0; 
+`; 
 
-const Carousel = styled.div`
- display: flex;
-  align-items: center;
-  width: 100%;          
-  max-width: 100%;  
-  flex-wrap: nowrap;
-  box-sizing: border-box;
-`;
-
-const AlbumList = styled.div`
-  display: flex;
-  overflow: hidden;
-  flex: 1;
-  gap: 2rem;
-`;
-
-const AlbumLink = styled.a`
-  position: relative;
-  display: block;
+const Carousel = styled.div` display: flex; 
+align-items: center; 
+width: 100%; 
+max-width: 100%; 
+flex-wrap: nowrap; 
+box-sizing: border-box; `; 
+const AlbumList = styled.div` 
+display: flex; 
+overflow: hidden; 
+flex: 1; gap: 2rem; 
+@media (max-width: 768px) {
   width: 100%;
-  height: 120px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0 8px #000;
-`;
-
-const AlbumCover = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
-
-const PlayButton = styled.button`
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 50%;
-  border: none;
-  padding: 6px;
-  cursor: pointer;
-  color: #fff;
-`;
-
-const NavButton = styled.button`
-  background-color: #5a2a2a;
-  border: none;
-  color: #f0d37f;
-  font-size: 1.5rem;
-  padding: 0.2rem 0.6rem;
-  cursor: pointer;
-  user-select: none;
-  border-radius: 4px;
-  margin: 0 0.5rem;
-
-  &:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
+  gap:1rem;
   }
-`;
+`; 
+const AlbumLink = styled.a` 
+position: relative; 
+display: block; 
+width: 100%; 
+height: 120px; 
+border-radius: 10px; 
+overflow: hidden; 
+box-shadow: 0 0 8px #000; 
+@media (max-width: 768px) {
+  width: 100%;
+  gap:0;
+  }
+`; 
+
+const AlbumCover = styled.img` 
+width: 100%;
+ height: 100%;
+  object-fit: cover; 
+  `; 
+
+  const PlayButton = styled.button` 
+  position: absolute; 
+  top: 8px; 
+  right: 8px; 
+  background-color: rgba(0, 0, 0, 0.6); 
+  border-radius: 50%; 
+  border: none; 
+  padding: 6px; cursor: pointer;
+   color: #fff; `; 
+
+   const NavButton = styled.button`
+    background-color: #5a2a2a; 
+    border: none; color: #f0d37f; 
+    font-size: 1.5rem; 
+    padding: 0.2rem 0.6rem; 
+    cursor: pointer; 
+    user-select: none; 
+    border-radius: 4px; 
+    margin: 0 0.5rem; 
+    &:disabled { opacity: 0.3; cursor: not-allowed; } 
+    `;
+
 // blog
 const BlogWrapper = styled.div`
   padding: 2rem;

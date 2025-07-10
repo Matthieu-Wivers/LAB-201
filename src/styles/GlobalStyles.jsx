@@ -171,7 +171,7 @@ export const FooterLink = styled.a`
   color: white;
   text-decoration: none;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.9rem;
 
   &:hover {
     color: #65000B;
