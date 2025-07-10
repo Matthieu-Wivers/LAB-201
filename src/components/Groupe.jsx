@@ -30,10 +30,13 @@ const Groupe = () => {
 
 export default Groupe;
 
+// style container englobant
+
 const Container = styled.div`
   text-align: center;
   padding: 30px;
 `;
+// style titre 
 
 const Title = styled.h1`
   font-size: 2.5rem;
@@ -86,11 +89,11 @@ const ImageRow = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  width: 30%; /* ou une taille fixe comme 300px */
+  width: 30%; 
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* pour éviter les débordements */
+  overflow: hidden; 
   border-radius: 10px;
 
   @media (max-width: 768px) {

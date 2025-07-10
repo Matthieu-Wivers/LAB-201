@@ -1,6 +1,6 @@
 # 🎧 LAB-201 – Site Officiel de Promotion d'Album
 
-Ce projet est un site web conçu pour promouvoir le **nouvel album** d’un **groupe musical reconnu**. Il permet aux fans de :
+Ce projet est un site web conçu pour promouvoir le **nouvel album** du **groupe Wolf Alice**. Il permet aux fans de :
 
 - découvrir l’univers du groupe,
 - explorer les albums via un carrousel interactif,
@@ -53,6 +53,7 @@ npm install prop-types --save-dev
 npm install firebase
 npm install emailjs-com
 npm install react-icons
+npm install react-toastify
 
 
 3. Lancer le serveur
@@ -96,7 +97,3 @@ src/
 🔁 Le composant Home contient tous les autres.
 🎸 Le composant Groupe est inclus dans AlbumsCarousel.
 
-💡 Conseils
-Crée un fichier .env pour les clés Firebase et Email.js.
-
-Pense à utiliser Firebase Hosting si tu veux publier ton site facilement.

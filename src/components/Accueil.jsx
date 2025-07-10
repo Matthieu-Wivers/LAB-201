@@ -37,11 +37,14 @@ const Accueil = ({id}) => {
 };
 
 export default Accueil;
+
+// style englobant
 const Container = styled.div`
   text-align: center;
   padding-top:70px;
   background: #160000;
 `;
+// style specifique
 
 const ImageWrapper = styled.div`
   position: relative;
@@ -53,7 +56,7 @@ const ImageWrapper = styled.div`
   height: 100vh;
 `;
 
-
+// style logo
 const Logo = styled.img`
   position: absolute;
   bottom: -8vh; 
@@ -61,6 +64,7 @@ const Logo = styled.img`
   transform: translateX(-50%);
   height: 20vh;
 `;
+// style text
 
 const Text = styled.p`
   margin-top: 40px;
@@ -71,6 +75,8 @@ const Text = styled.p`
     font-family: 'Lato', sans-serif;
 
 `;
+
+// style section
 const Section = styled.section`
   display: flex;
   align-items: center;

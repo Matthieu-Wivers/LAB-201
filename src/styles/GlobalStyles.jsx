@@ -4,7 +4,6 @@ import styled, { createGlobalStyle } from 'styled-components';
 export const GlobalStyles = createGlobalStyle`
   * {
     margin: 0; padding: 0; box-sizing: border-box;
-  /* background: #2F0101; */
     
   }
   html {
@@ -33,7 +32,6 @@ export const NavBar = styled.header`
     gap: 2.5rem;
     margin-right: 1,2rem;
   font-family: 'League Spargan', sans-serif;
-    /* border: 2px solid white; */
   }
     @media (max-width: 768px) {
     nav.desktop-menu {

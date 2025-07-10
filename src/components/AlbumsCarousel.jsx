@@ -84,7 +84,7 @@ export default function AlbumCarousel({ id }) {
 
         <MiniGlobal>
             <IntroSection>
-                    <IntroImage src="/Images/Bag.png" alt="groupe" />
+                    <IntroImage src="/Images/VinylRecordMockup.jpg" alt="groupe" />
                     <IntroText>
                     <h2>Le nouvel album - The Clearing</h2>
                     <p>
@@ -175,12 +175,13 @@ const HeroSection = styled.section`
   }
 
   @media (max-width: 768px) {
+  /* pas de background en mobile */
     background-image: none;
     height: auto;
     padding: 0;
     flex-direction: column;
     &::before {
-    
+  /* le flou du backgroung disparu */
     background: none;
     z-index: 0;
   }
@@ -224,6 +225,8 @@ const HeroParagraph = styled.p`
     font-size: 1rem;
   }
 `;
+
+// L'image qui s'affiche en mobile mais absente en desktop
 const MobileImage = styled.img`
   display: none;
   width: 100%;

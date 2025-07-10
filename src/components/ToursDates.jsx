@@ -74,12 +74,15 @@ export default ToursDates;
 
 // Styled Components
 
+// style englobant
 const Wrapper = styled.div`
   background: #160000;
   padding: 3rem 1rem;
   font-family: 'Lato', sans-serif;
   color: #fff;
 `;
+
+// style titre
 
 const Title = styled.h2`
   font-family: 'League Spartan', sans-serif;
@@ -95,12 +98,14 @@ const TitleLeft = styled(Title)`
   }
   
 `;
+// style description
 
 const Description = styled.p`
   font-size: 1.5rem;
   text-align: center;
   margin-bottom: 2rem;
 `;
+// style cards englobant
 
 const CardsContainer = styled.div`
   display: grid;
@@ -113,6 +118,7 @@ const CardsContainer = styled.div`
     grid-template-columns: 1fr !important;
   }
 `;
+// style cards spécifique
 
 const Card = styled.div`
   border: 1px solid #E5B85A;
@@ -157,6 +163,8 @@ const Button = styled.button`
   font-family: 'Lato', sans-serif;
 `;
 
+// style section presentation
+
 const Presentation = styled.section`
   display: flex;
   flex-wrap: wrap;
@@ -170,8 +178,6 @@ const Presentation = styled.section`
 const ImageContainer = styled.div`
   flex: 1 1 300px;
   width: 100%;
- 
- 
 `;
 
 const VinylImage = styled.img`

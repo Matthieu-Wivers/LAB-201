@@ -1,10 +1,6 @@
 import styled from 'styled-components';
 
-// Container principal
-export const ContactSection = styled.section`
 
-
-`;
 // background image styles
 export const BackgroundContact = styled.div`
   position: relative;
@@ -60,7 +56,7 @@ export const LeftContent = styled.div`
   color: #fff;
   width: 50%;
   p {
-    margin-bottom: 1.5rem;       /* plus d'espace entre les paragraphes */
+    margin-bottom: 1.5rem;       
     padding: 10px 40px;
     text-align: left;
     line-height: 1.2;
