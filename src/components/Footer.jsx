@@ -16,7 +16,6 @@ import goldLogo from '../assets/goldLogo.png';
 
 const Footer = () => (
     <FooterContainer>
-      {/* Ligne 1 : logo + navigation */}
       <FooterRow>
         <Logo src={goldLogo} alt="Logo du groupe" />
         <NavLinksFooter>
@@ -27,18 +26,18 @@ const Footer = () => (
         </NavLinksFooter>
       </FooterRow>
 
-      {/* Ligne 2 : copyright + réseaux */}
+      
       <FooterRow>
         <Copyright>© 2025 Wolf Alice Tous droits réservés</Copyright>
         <Socials>
-           <a href="#"><FaInstagram /></a>
-          <a href="#"><FaTiktok /></a>
-          <a href="#"><FaYoutube /></a>
-          <a href="#"><FaSpotify /></a>
+           <a href="https://www.instagram.com/wolfaliceband/" target="_blank"><FaInstagram /></a>
+          <a href="https://www.tiktok.com/@wolfalicemusic" target="_blank"><FaTiktok /></a>
+          <a href="https://www.youtube.com/user/wolfalicevideos" target="_blank"><FaYoutube /></a>
+          <a href="https://open.spotify.com/intl-fr/artist/3btzEQD6sugImIHPMRgkwV" target="_blank"><FaSpotify /></a>
         </Socials>
       </FooterRow>
 
-      {/* Ligne 3 : texte centré */}
+      
       <FooterRow >
         <SmallText>
           Site réalisé dans le cadre d’un projet étudiant.

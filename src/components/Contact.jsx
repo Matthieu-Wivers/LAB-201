@@ -74,10 +74,10 @@ export default function Contact({id}) {
           Et suivez-nous sur les réseaux pour toutes les actus 🎸
         </Text>
       <Socials>
-                 <a href="#"><FaInstagram /></a>
-                <a href="#"><FaTiktok /></a>
-                <a href="#"><FaYoutube /></a>
-                <a href="#"><FaSpotify /></a>
+                 <a href="https://www.instagram.com/wolfaliceband/" target="_blank"><FaInstagram /></a>
+                <a href="https://www.tiktok.com/@wolfalicemusic" target="_blank"><FaTiktok /></a>
+                <a href="https://www.youtube.com/user/wolfalicevideos" target="_blank"><FaYoutube /></a>
+                <a href="https://open.spotify.com/intl-fr/artist/3btzEQD6sugImIHPMRgkwV" target="_blank"><FaSpotify /></a>
        </Socials>
        </UnderContact>
        <ToastContainer position='bottom-right' autoClose={3000} hideProgressBar/>

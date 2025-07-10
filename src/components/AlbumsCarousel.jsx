@@ -1,82 +1,321 @@
 import React, { useState } from "react";
-import Groupe from "./Groupe";
+import styled from "styled-components";
+
 const albums = [
-  { id: 1, title: "My Love Is Cool", img: "./Images/MyLoveIsCoolCover.jpg", spotifyUrl: "https://open.spotify.com/intl-fr/album/2L82g2rqAlNBcADFzayJBU?si=zxgSVs8cTxywbvTDWYZErA" },
-  { id: 2, title: "Vision OF A Life", img: "./Images/VisionOfALifeCover.jpg", spotifyUrl: "https://open.spotify.com/intl-fr/album/7Mn6FjNopuROYZLIN91hhe?si=8wLeDYH-RUSycmuMDA7WVw" },
-  { id: 3, title: "Creature Songs", img: "./Images/CreatureSongsCover.jpg", spotifyUrl: "https://https://open.spotify.com/album/7HVdYVFbPoR0ILDyKYXemR?si=dOScyGZbQBGUE4tX4kwhNw.spotify.com/album/..." },
-  { id: 4, title: "Blue Lullaby", img: "./Images/BlueLyllabyCover.jpg", spotifyUrl: "https://open.spotify.com/album/2yYVQSvioUyc6LOIruv3Ou?si=TmdLmOA-Rt-2Gcwyik8LUA" },
-  { id: 5, title: "Spotify Sessions", img: "./Images/SpotifySessionsCover.jpg", spotifyUrl: "https://open.spotify.com/album/0rpYUAMj7cXOOuNLlKJ1MR?si=-j7OfxLQQtG3GiSAcMWlSw" },
+  {
+    id: 1,
+    title: "My Love Is Cool",
+    img: "./Images/MyLoveIsCoolCover.jpg",
+    spotifyUrl:
+      "https://open.spotify.com/intl-fr/album/2L82g2rqAlNBcADFzayJBU?si=zxgSVs8cTxywbvTDWYZErA",
+  },
+  {
+    id: 2,
+    title: "Vision OF A Life",
+    img: "./Images/VisionOfALifeCover.jpg",
+    spotifyUrl:
+      "https://open.spotify.com/intl-fr/album/7Mn6FjNopuROYZLIN91hhe?si=8wLeDYH-RUSycmuMDA7WVw",
+  },
+  {
+    id: 3,
+    title: "Creature Songs",
+    img: "./Images/CreatureSongsCover.jpg",
+    spotifyUrl:
+      "https://open.spotify.com/album/7HVdYVFbPoR0ILDyKYXemR?si=dOScyGZbQBGUE4tX4kwhNw",
+  },
+  {
+    id: 4,
+    title: "Blue Lullaby",
+    img: "./Images/BlueLyllabyCover.jpg",
+    spotifyUrl:
+      "https://open.spotify.com/album/2yYVQSvioUyc6LOIruv3Ou?si=TmdLmOA-Rt-2Gcwyik8LUA",
+  },
+  {
+    id: 5,
+    title: "Spotify Sessions",
+    img: "./Images/SpotifySessionsCover.jpg",
+    spotifyUrl:
+      "https://open.spotify.com/album/0rpYUAMj7cXOOuNLlKJ1MR?si=-j7OfxLQQtG3GiSAcMWlSw",
+  },
+    {
+    id: 6,
+    title: "Spotify Sessions",
+    img: "./Images/SpotifySessionsCover.jpg",
+    spotifyUrl:
+      "https://open.spotify.com/album/0rpYUAMj7cXOOuNLlKJ1MR?si=-j7OfxLQQtG3GiSAcMWlSw",
+  },
+    {
+    id: 7,
+    title: "Spotify Sessions",
+    img: "./Images/SpotifySessionsCover.jpg",
+    spotifyUrl:
+      "https://open.spotify.com/album/0rpYUAMj7cXOOuNLlKJ1MR?si=-j7OfxLQQtG3GiSAcMWlSw",
+  },
 ];
 
-export default function AlbumCarousel({id}) {
-    const [startIndex, setStartIndex] = useState(0);
-    const visibleCount = 5;
+export default function AlbumCarousel({ id }) {
+  const [startIndex, setStartIndex] = useState(0);
+  const visibleCount = 5;
 
-    const prev = () => {
-        setStartIndex((prev) => Math.max(prev - 1, 0));
-    };
+  const prev = () => {
+    setStartIndex((prev) => Math.max(prev - 1, 0));
+  };
 
-    const next = () => {
-        setStartIndex((prev) => Math.min(prev + 1, albums.length - visibleCount));
-    };
+  const next = () => {
+    setStartIndex((prev) =>
+      Math.min(prev + 1, albums.length - visibleCount)
+    );
+  };
 
-    return (
-        <>
-        <Groupe/>
-        <div id={id} style={{ backgroundColor: "#330a0a", color: "#f0d37f", padding: "1rem", maxWidth: 900, margin: "auto" }}>
-        <h2 style={{ textAlign: "center", marginBottom: "1rem" }}>(Re)découvrez les premiers albums</h2>
-        
-        <div style={{ display: "flex", alignItems: "center" }}>
-            <button onClick={prev} disabled={startIndex === 0} style={navButtonStyle}>{"<"}</button>
+  return (
+    <Global  id={id}>
+         <IntroSection>
+                <IntroImage src="/Images/Bag.png" alt="Visuel The Clearing" />
+                <IntroText>
+                <h2>Le nouvel album - The Clearing</h2>
+                <p>
+                    Le retour lumineux d’un groupe en pleine réinvention. <br /> <br />
+                    Ce quatrième album studio marque un virage sonore: plus apaisé mais toujours intense, il troque les guitares abrasives de leurs débuts pour des textures soft rock inspirées des années 70.
+                </p>
+                </IntroText>
+  </IntroSection>
+    <Wrapper>
+      <Title>(Re)découvrez les premiers albums</Title>
 
-            <div style={{ display: "flex", overflow: "hidden", flex: 1, gap: "1rem" }}>
-            {albums.slice(startIndex, startIndex + visibleCount).map((album) => (
-                <a
+      <Carousel>
+        <NavButton onClick={prev} disabled={startIndex === 0}>
+          {"<"}
+        </NavButton>
+
+        <AlbumList>
+          {albums
+            .slice(startIndex, startIndex + visibleCount)
+            .map((album) => (
+              <AlbumLink
                 key={album.id}
                 href={album.spotifyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ position: "relative", display: "block", width: 120, height: 120, borderRadius: 10, overflow: "hidden", boxShadow: "0 0 8px #000" }}
-                >
-                <img
-                    src={album.img}
-                    alt={album.title}
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                />
-                <button
-                    style={{
-                    position: "absolute",
-                    top: 8,
-                    right: 8,
-                    backgroundColor: "rgba(0,0,0,0.6)",
-                    borderRadius: "50%",
-                    border: "none",
-                    padding: 6,
-                    cursor: "pointer",
-                    }}
-                    aria-label={`Play ${album.title}`}
-                >
-                    ▶
-                </button>
-                </a>
+              >
+                <AlbumCover src={album.img} alt={album.title} />
+                <PlayButton aria-label={`Play ${album.title}`}>▶</PlayButton>
+              </AlbumLink>
             ))}
-            </div>
+        </AlbumList>
 
-            <button onClick={next} disabled={startIndex >= albums.length - visibleCount} style={navButtonStyle}>{">"}</button>
-        </div>
-        </div>
-        </>
-    );
+        <NavButton
+          onClick={next}
+          disabled={startIndex >= albums.length - visibleCount}
+        >
+          {">"}
+        </NavButton>
+      </Carousel>
+    </Wrapper>
+    <BlogWrapper>
+        <BlogHeading>Blog</BlogHeading>
+        <BlogGrid>
+          <Block>
+            <BlogDate>Publié le 3 juin 2025</BlogDate>
+            <BlogExcerpt>
+              Dans Les Coulisses de The Clearing – Une Exploration Sonore
+              Intime
+            </BlogExcerpt>
+          </Block>
+          <Block>
+            <BlogDate>Publié le 10 juin 2025</BlogDate>
+            <BlogExcerpt>
+              Dans Les Coulisses de The Clearing – Une Exploration Sonore
+              Intime
+            </BlogExcerpt>
+          </Block>
+        </BlogGrid>
+      </BlogWrapper>
+    </Global>
+    
+  );
 }
 
-const navButtonStyle = {
-    backgroundColor: "#5a2a2a",
-    border: "none",
-    color: "#f0d37f",
-    fontSize: "1.5rem",
-    padding: "0.2rem 0.6rem",
-    cursor: "pointer",
-    userSelect: "none",
-    borderRadius: 4,
-    margin: "0 0.5rem",
-};
+// Styled Components
+const Global = styled.div`
+  background-color: #160000;
+  padding: 3rem 1rem;
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  width:auto;
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
+`;
+const IntroSection = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  width:100%;
+  color: white;
+  background: #2F0101;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
+`;
+
+const IntroImage = styled.img`
+  width: 50%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
+const IntroText = styled.div`
+  width: 50%;
+  color: #fff;
+   @media (max-width: 768px) {
+  width: 100%;
+
+    text-align:left;
+  }
+
+  h2 {
+    font-family: 'League Spartan', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color:#F3E4B2;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-family: 'Lato', sans-serif;
+
+  }
+`;
+const Wrapper = styled.div`
+  color: #f0d37f;
+  padding: 1rem;
+  width: auto;
+  margin: auto;
+`;
+
+const Title = styled.h2`
+  text-align: center;
+  margin-bottom: 4rem;
+`;
+
+const Carousel = styled.div`
+ display: flex;
+  align-items: center;
+  width: 100%;          
+  max-width: 100%;  
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+`;
+
+const AlbumList = styled.div`
+  display: flex;
+  overflow: hidden;
+  flex: 1;
+  gap: 2rem;
+`;
+
+const AlbumLink = styled.a`
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 120px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 8px #000;
+`;
+
+const AlbumCover = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
+const PlayButton = styled.button`
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  color: #fff;
+`;
+
+const NavButton = styled.button`
+  background-color: #5a2a2a;
+  border: none;
+  color: #f0d37f;
+  font-size: 1.5rem;
+  padding: 0.2rem 0.6rem;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 4px;
+  margin: 0 0.5rem;
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+`;
+
+const BlogWrapper = styled.div`
+  padding: 2rem;
+  font-family: "Lato", sans-serif;
+`;
+
+const BlogHeading = styled.p`
+  margin-bottom: 2rem;
+  font-size: 2.1rem;
+  color: #ffffff;
+  text-align: center;
+`;
+
+const BlogGrid = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  width: 100%;
+`;
+
+const Block = styled.div`
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 8px;
+  width: 40%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
+const BlogDate = styled.div`
+  background-color: #6d1a1a;
+  width: 60%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  color: #fff;
+`;
+
+const BlogExcerpt = styled.p`
+  color: #000;
+  text-align: left;
+`;

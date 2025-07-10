@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ref, onValue } from "firebase/database";
 import { database } from "../firebase";
 import styled from "styled-components";
+import Groupe from "./Groupe";
 
 const ToursDates = ({ id }) => {
   const [tours, setTours] = useState([]);
@@ -22,8 +23,8 @@ const ToursDates = ({ id }) => {
   const displayedTours = showAll ? tours : tours.slice(0, 3);
 
   return (
-    <Wrapper>
-      <section id={id}>
+    <Wrapper id={id}>
+      <section >
         <Title>Tournée 2025</Title>
         <Description>
           Une série de concerts à ne pas manquer à l’occasion de la sortie de The Clearing <br />
@@ -64,6 +65,7 @@ const ToursDates = ({ id }) => {
           <ButtonPrecommande>Précommander</ButtonPrecommande>
         </TextContainer>
       </Presentation>
+              <Groupe/>
     </Wrapper>
   );
 };
@@ -88,6 +90,10 @@ const Title = styled.h2`
 
 const TitleLeft = styled(Title)`
   text-align: left;
+   @media (max-width: 768px) {
+    order:1;
+  }
+  
 `;
 
 const Description = styled.p`
@@ -164,6 +170,8 @@ const Presentation = styled.section`
 const ImageContainer = styled.div`
   flex: 1 1 300px;
   width: 100%;
+ 
+ 
 `;
 
 const VinylImage = styled.img`
@@ -187,4 +195,5 @@ const Paragraph = styled.p`
 
 const ButtonPrecommande = styled(Button)`
   width: 50%;
+
 `;

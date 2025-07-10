@@ -1,5 +1,4 @@
 // App.js ou Groupe.js
-import React from 'react';
 import styled from 'styled-components';
 
 const Groupe = () => {
@@ -10,13 +9,16 @@ const Groupe = () => {
         T-shirts, posters et goodies en édition limitée, précommandez dès maintenant.
       </Paragraph>
       <ImageRow>
-        <img src="/Images/wolfAliceBag.png" alt="Produit 1" />
-        <img src="/Images/wolfAliceBag.png" alt="Produit 2" />
-        <img src="/Images/wolfAliceBag.png" alt="Produit 3" />
+        <ImageContainer>
+        <StyledImage img src="/Images/HangingTshirtMockup.jpg" alt="Produit 1" />
+        </ImageContainer>
+          <ImageContainer>
+            <StyledImage img src="/Images/Bag.png" alt="Produit 2" />
+        </ImageContainer>
+          <ImageContainer>
+        <StyledImage img src="/Images/Tshirt.png" alt="Produit 3" />
+        </ImageContainer>
       </ImageRow>
-      <ImageCenter>
-        <img src="/Images/SpotifySessionsCover.jpg" alt="SpotifySessionsCover" />
-      </ImageCenter>
       <PreorderButton>Précommander</PreorderButton>
       <BarContainer>
         <LongBar />
@@ -81,37 +83,26 @@ const ImageRow = styled.div`
     flex-direction: column;
     align-items: center;
   }
+`;
 
-  img {
-    width: 30%;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
+const ImageContainer = styled.div`
+  width: 30%; /* ou une taille fixe comme 300px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* pour éviter les débordements */
+  border-radius: 10px;
 
-    @media (max-width: 768px) {
-      width: 100%;
-    }
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `;
 
-const ImageCenter = styled.div`
+const StyledImage = styled.img`
   width: 100%;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-
-  @media (max-width: 768px) {
-    margin-bottom: 0px;
-    display: none;
-  }
-
-  img {
-    width: 60%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: 0.3s ease;
-  }
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
 `;
 
 const PreorderButton = styled.button`

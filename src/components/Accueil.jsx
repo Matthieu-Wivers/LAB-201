@@ -1,7 +1,6 @@
 // HeroSection.js (ou Accueil.js)
 import React from 'react';
 import styled from 'styled-components';
-// import logos from '../public/Images/logos.png';
 import logos from '../assets/logos.png'
 
 
@@ -58,10 +57,10 @@ const ImageWrapper = styled.div`
 
 const Logo = styled.img`
   position: absolute;
-  bottom: -5vh; /* tout en bas du parent */
+  bottom: -8vh; 
   left: 50%;
   transform: translateX(-50%);
-  height: 90px;
+  height: 20vh;
 `;
 
 const Text = styled.p`
