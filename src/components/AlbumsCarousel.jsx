@@ -69,48 +69,63 @@ export default function AlbumCarousel({ id }) {
 
   return (
     <Global  id={id}>
-         <IntroSection>
-                <IntroImage src="/Images/Bag.png" alt="Visuel The Clearing" />
-                <IntroText>
-                <h2>Le nouvel album - The Clearing</h2>
-                <p>
-                    Le retour lumineux d’un groupe en pleine réinvention. <br /> <br />
-                    Ce quatrième album studio marque un virage sonore: plus apaisé mais toujours intense, il troque les guitares abrasives de leurs débuts pour des textures soft rock inspirées des années 70.
-                </p>
-                </IntroText>
-  </IntroSection>
-    <Wrapper>
-      <Title>(Re)découvrez les premiers albums</Title>
+        <HeroSection>
+            <MobileImage src="/Images/groupe.png" alt="Groupe" />
+            <HeroContent>
+                <HeroTitle>À propos du groupe</HeroTitle>
+                <HeroParagraph>
+                Wolf Alice est un groupe britannique de rock alternatif, formé à Londres.
+                </HeroParagraph>
+                <HeroParagraph>
+                    Mélangeant grunge, shoegaze et folk, ils marquent les esprits par leur son puissant et la voix singulière d’Ellie Rowsell.
+                </HeroParagraph>
+            </HeroContent>
+    </HeroSection>
 
-      <Carousel>
-        <NavButton onClick={prev} disabled={startIndex === 0}>
-          {"<"}
-        </NavButton>
+        <MiniGlobal>
+            <IntroSection>
+                    <IntroImage src="/Images/Bag.png" alt="groupe" />
+                    <IntroText>
+                    <h2>Le nouvel album - The Clearing</h2>
+                    <p>
+                        Le retour lumineux d’un groupe en pleine réinvention. <br /> <br />
+                        Ce quatrième album studio marque un virage sonore: plus apaisé mais toujours intense, il troque les guitares abrasives de leurs débuts pour des textures soft rock inspirées des années 70.
+                    </p>
+                    </IntroText>
+            </IntroSection>
+        
+        <Title>(Re)découvrez les premiers albums</Title>
 
-        <AlbumList>
-          {albums
-            .slice(startIndex, startIndex + visibleCount)
-            .map((album) => (
-              <AlbumLink
-                key={album.id}
-                href={album.spotifyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <AlbumCover src={album.img} alt={album.title} />
-                <PlayButton aria-label={`Play ${album.title}`}>▶</PlayButton>
-              </AlbumLink>
-            ))}
-        </AlbumList>
+        <Carousel>
+            <NavButton onClick={prev} disabled={startIndex === 0}>
+            {"<"}
+            </NavButton>
 
-        <NavButton
-          onClick={next}
-          disabled={startIndex >= albums.length - visibleCount}
-        >
-          {">"}
-        </NavButton>
-      </Carousel>
-    </Wrapper>
+            <AlbumList>
+            {albums
+                .slice(startIndex, startIndex + visibleCount)
+                .map((album) => (
+                <AlbumLink
+                    key={album.id}
+                    href={album.spotifyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <AlbumCover src={album.img} alt={album.title} />
+                    <PlayButton aria-label={`Play ${album.title}`}>▶</PlayButton>
+                </AlbumLink>
+                ))}
+            </AlbumList>
+
+            <NavButton
+            onClick={next}
+            disabled={startIndex >= albums.length - visibleCount}
+            >
+            {">"}
+            </NavButton>
+        </Carousel>
+        
+    </MiniGlobal>
     <BlogWrapper>
         <BlogHeading>Blog</BlogHeading>
         <BlogGrid>
@@ -137,14 +152,100 @@ export default function AlbumCarousel({ id }) {
 
 // Styled Components
 const Global = styled.div`
-  background-color: #160000;
+`;
+// backgroundImage et texte au dessus
+const HeroSection = styled.section`
+  background-image: url("/Images/groupe.png");
+  background-size: cover;
+  background-position: center;
+  padding: 6rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  width: 100%;
+  height: 80vh;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+
+  @media (max-width: 768px) {
+    background-image: none;
+    height: auto;
+    padding: 0;
+    flex-direction: column;
+    &::before {
+    
+    background: none;
+    z-index: 0;
+  }
+  }
+`;
+
+
+const HeroContent = styled.div`
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  max-width: 600px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  @media (max-width: 768px) {
+    width:80%;
+    padding: 20px;
+    
+  }
+`;
+
+const HeroTitle = styled.h1`
+  font-family: 'League Spartan', sans-serif;
+  font-size: 2.5rem;
+  margin: 0;
+
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+`;
+
+const HeroParagraph = styled.p`
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-family: 'Lato', sans-serif;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+`;
+const MobileImage = styled.img`
+  display: none;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
+
+// Image et texte 
+const MiniGlobal = styled.div`
+  background: #2F0101;
   padding: 3rem 1rem;
   font-family: 'Lato', sans-serif;
   color: #fff;
-  width:auto;
+  width:100%;
 
   @media (max-width: 768px) {
     padding: 2rem 1rem;
+    background: none;
   }
 `;
 const IntroSection = styled.div`
@@ -154,7 +255,6 @@ const IntroSection = styled.div`
   gap: 4rem;
   width:100%;
   color: white;
-  background: #2F0101;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -196,16 +296,11 @@ const IntroText = styled.div`
 
   }
 `;
-const Wrapper = styled.div`
-  color: #f0d37f;
-  padding: 1rem;
-  width: auto;
-  margin: auto;
-`;
 
+// caroussel 
 const Title = styled.h2`
   text-align: center;
-  margin-bottom: 4rem;
+  margin: 4rem 0;
 `;
 
 const Carousel = styled.div`
@@ -268,7 +363,7 @@ const NavButton = styled.button`
     cursor: not-allowed;
   }
 `;
-
+// blog
 const BlogWrapper = styled.div`
   padding: 2rem;
   font-family: "Lato", sans-serif;
