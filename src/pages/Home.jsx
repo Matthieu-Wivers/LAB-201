@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { NavBar, NavLink, Burger, MobileMenu, Section } from '../styles/GlobalStyles';
+import { NavBar, NavLink, Burger, MobileMenu } from '../styles/GlobalStyles';
 import goldLogo from '../assets/goldLogo.png'
 import Accueil from '../components/Accueil';
 import Contact from '../components/Contact';
@@ -39,16 +39,7 @@ const Home = () => {
             <main style={{background:"#160000"}}>
                 <Accueil id="Home" />
                 <ToursDates id="Tournee" />
-
-                <AlbumCarousel id="Groupe" />
-                
-
-                
-
-                
-
-               
-                
+                <AlbumCarousel id="Groupe" />                  
                 <Contact id="Contact"/>
             </main>
             <Footer/>

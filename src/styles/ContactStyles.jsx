@@ -15,6 +15,7 @@ export const BackgroundContact = styled.div`
   h2 {
     text-align: center;
     color: #E5B85A;
+  font-family: 'League Spartan', sans-serif;
     margin-bottom: 2rem;
     position: relative;
     z-index: 2;

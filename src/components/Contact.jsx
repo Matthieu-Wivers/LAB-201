@@ -27,10 +27,10 @@ export default function Contact({id}) {
     e.preventDefault();
 
     emailjs.sendForm(
-      'service_jvhwhzk',
-      'template_m2rcarn',
-      FormRef.current,
-      '2C7HlqYTqaCCmyFjJ'
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+     import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+    FormRef.current,
+  import.meta.env.VITE_EMAILJS_USER_ID
     ).then(
       () =>{
         toast.success("✅ Message envoyé !");
@@ -61,7 +61,7 @@ export default function Contact({id}) {
         <Form ref={FormRef} onSubmit={sendEmail}>
           <Row>
           <Input type="text" name='user_name' placeholder="Nom" required />
-          <Input type="email" name='user_name' placeholder="Email" required />
+          <Input type="email" name='user_email' placeholder="Email" required />
           </Row>
           <Textarea name = "message"placeholder="Message" rows="5" required />
           <Button type="submit">Envoyer</Button>

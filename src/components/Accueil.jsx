@@ -1,4 +1,3 @@
-// HeroSection.js (ou Accueil.js)
 import React from 'react';
 import styled from 'styled-components';
 import logos from '../assets/logos.png'
